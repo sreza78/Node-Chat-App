@@ -5,12 +5,12 @@
     <title>Chat</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link href='http://www.fontonline.ir/css/BYekan.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="/style.css" />
-    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
@@ -41,29 +41,26 @@
                 </div>
             </div>
         </div>
-        <div class="row" id="messageArea">
-            <div class="col-md-4">
-                <div class="well">
-                    <h3 class="text-center">online users</h3>
-                    <ul class="list-group" id="users"></ul>
+        <div class="ui" id="messageArea" style="display: none">
+        <div class="left-menu">
+            <h4 class="text-center bg-primary text-light">online users</h4>
+            <menu class="list-friends" id="users"></menu>
+        </div>
+        <div class="chat">
+            <ul class="messages"></ul>
+            <div class="write-form">
+                <textarea placeholder="Type your message" id="text" rows="2"></textarea>
+                <span class="send">Send</span>
+                <div class="file-upload">
+                    <input type="file" accept="image/*" id="image" />
+                    <i class="fa fa-picture-o picture"></i>
                 </div>
-            </div>
-            <div class="col-md-8">
-                <div class="chat form-control" id="chat">
-                </div>
-                <form id="messageForm">
-                    <div class="form-group">
-                        <br>
-                        <textarea type="text" class="form-control" placeholder="Message..." id="message"></textarea>
-                        <br>
-                        <input type="submit" class="btn btn-primary col-sm-4" value="Send">
-                    </div>
-                </form>
             </div>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/nicescroll/3.5.4/jquery.nicescroll.js'></script>
     <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
