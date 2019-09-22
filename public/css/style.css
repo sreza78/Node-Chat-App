@@ -11,8 +11,9 @@ body {
 
 body {
     overflow: hidden;
-    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
 }
+
 .ui {
     margin: 20px auto;
     width: 900px;
@@ -289,7 +290,7 @@ body {
     margin-left: 5%;
 }
 
-.left-menu h4{
+.left-menu h4 {
     padding: 15px;
 }
 
@@ -309,7 +310,8 @@ body {
     transition: all 1s;
     color: #FFFFFF;
     font-size: 20px;
-    margin: -5px 30px;
+    margin: -5px 0px 0px 30px;
+    float: left;
 }
 
 .file-upload input[type='file'] {
@@ -319,6 +321,26 @@ body {
     top: 0;
     left: 0;
     opacity: 0;
+    cursor: pointer;
+}
+
+.file-upload2 {
+    height: 40px;
+    width: 40px;
+    border-radius: 100px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #FFFFFF;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom, #2590EB 50%, #FFFFFF 50%);
+    background-size: 100% 200%;
+    transition: all 1s;
+    color: #FFFFFF;
+    font-size: 20px;
+    margin: -5px 0px 0px 10px;
+    float: left;
     cursor: pointer;
 }
 

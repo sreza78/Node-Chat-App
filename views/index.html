@@ -42,27 +42,30 @@
             </div>
         </div>
         <div class="ui" id="messageArea" style="display: none">
-        <div class="left-menu">
-            <h4 class="text-center bg-primary text-light">online users</h4>
-            <menu class="list-friends" id="users"></menu>
-        </div>
-        <div class="chat">
-            <ul class="messages"></ul>
-            <div class="write-form">
-                <textarea placeholder="Type your message" id="text" rows="2"></textarea>
-                <span class="send">Send</span>
-                <div class="file-upload">
-                    <input type="file" accept="image/*" id="image" />
-                    <i class="fa fa-picture-o picture"></i>
+            <div class="left-menu">
+                <h4 class="text-center bg-primary text-light">online users</h4>
+                <menu class="list-friends" id="users"></menu>
+            </div>
+            <div class="chat">
+                <ul class="messages"></ul>
+                <div class="write-form">
+                    <textarea placeholder="Type your message" id="text" rows="2"></textarea>
+                    <span class="send">Send</span>
+                    <div class="file-upload">
+                        <input type="file" accept="image/*" id="image" />
+                        <i class="fa fa-picture-o picture"></i>
+                    </div>
+                    <div class="file-upload2" id="volume">
+                        <i class="fa fa-volume-up"></i>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/nicescroll/3.5.4/jquery.nicescroll.js'></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/nicescroll/3.5.4/jquery.nicescroll.js'></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
 </body>
 
 </html>

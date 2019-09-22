@@ -2,6 +2,7 @@ $(document).ready(function() {
     var socket = io.connect();
     var me;
     var notification = new Audio("../sounds/ring.mp3");
+    var volume = $("#volume");
 
     var userFormArea = $("#userFormArea");
     var userForm = $("#userForm");
@@ -122,5 +123,19 @@ $(document).ready(function() {
     };
     $(".list-friends").niceScroll(conf);
     $(".messages").niceScroll(lol);
+
+    volume.click(function() {
+        if (notification.muted == true) {
+            notification.muted = false;
+            volume.html("");
+            volume.html('<i class="fa fa-volume-up"></i>')
+            $(this).css({ 'background-position': '0 0%', 'color': '#2590EB' });
+        } else {
+            notification.muted = true;
+            volume.html("");
+            volume.html('<i class="fa fa-volume-off"></i>')
+            $(this).css({ 'background-position': '0 -100%', 'color': '#2590EB' });
+        }
+    })
 
 })
