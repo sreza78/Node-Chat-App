@@ -45,6 +45,10 @@ io.sockets.on('connection', function(socket) {
         io.sockets.emit('new image', { image: true, buffer: data, user:socket.username , time: moment().format("hh:mm a")});
     })
 
+    socket.on('send video', function(data) {
+        io.sockets.emit('new video', { video: true, buffer: data, user:socket.username , time: moment().format("hh:mm a")});
+    })
+
     socket.on("new user", function(data, callback) {
         callback(true);
         socket.username = data;

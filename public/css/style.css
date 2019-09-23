@@ -294,8 +294,7 @@ body {
     padding: 15px;
 }
 
-
-.file-upload {
+.chat-item{
     height: 40px;
     width: 40px;
     border-radius: 100px;
@@ -310,11 +309,21 @@ body {
     transition: all 1s;
     color: #FFFFFF;
     font-size: 20px;
-    margin: -5px 0px 0px 30px;
     float: left;
 }
 
-.file-upload input[type='file'] {
+.chat-item1 {
+    margin: -5px 0px 0px 30px;
+}
+.chat-item2 {
+    margin: -5px 0px 0px 10px;
+}
+.chat-item3 {
+    margin: -5px 0px 0px 10px;
+    cursor: pointer;
+}
+
+.chat-item1 input[type='file'], .chat-item2 input[type='file'] {
     height: 40px;
     width: 40px;
     position: absolute;
@@ -324,27 +333,24 @@ body {
     cursor: pointer;
 }
 
-.file-upload2 {
-    height: 40px;
-    width: 40px;
-    border-radius: 100px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 4px solid #FFFFFF;
-    overflow: hidden;
-    background-image: linear-gradient(to bottom, #2590EB 50%, #FFFFFF 50%);
-    background-size: 100% 200%;
-    transition: all 1s;
-    color: #FFFFFF;
-    font-size: 20px;
-    margin: -5px 0px 0px 10px;
-    float: left;
-    cursor: pointer;
-}
-
-.file-upload:hover {
+.chat-item1:hover, .chat-item2:hover {
     background-position: 0 -100%;
     color: #2590EB;
+}
+
+.player {
+  width: 450px;
+  height: 257px;
+}
+.player video {
+  background: black;
+  width: 450px;
+  height: 257px;
+  z-index: 1;
+  position: absolute;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 10px solid #000;
+  box-shadow: 0 0 10px #000;
+  outline: none;
 }
