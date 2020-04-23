@@ -1,0 +1,21 @@
+image: node:latest
+
+stages:
+    - build
+    - start
+
+cache:
+    paths:
+        - node_modules/
+
+install_dependencies:
+    stage: build
+    script:
+        - npm install
+    artifacts:
+        paths:
+            - node_modules/
+
+start_server:
+    stage: start
+    script: nodemon start
