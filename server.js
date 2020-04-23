@@ -8,8 +8,8 @@ const requestIp = require('request-ip');
 users = [];
 connections = [];
 
-server.listen(2020);
-console.log('server is running at port 2020');
+server.listen(80);
+console.log('server is running at port 80');
 
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/views'));
@@ -22,6 +22,13 @@ app.use(function(req, res) {
 
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '/index.html');
+})
+
+app.get('/users', function(req, res) {
+    res.send(users);
+})
+app.get('/connections', function(req, res) {
+    res.send(connections);
 })
 
 
@@ -53,8 +60,9 @@ io.sockets.on('connection', function(socket) {
         callback(true);
         socket.username = data;
         user ={
-            ip : socket.handshake.address.split(':')[3],
-            username: socket.username
+            ip: socket.handshake.address.split(':')[3],
+            username: socket.username,
+            id: moment().format('DDmmYYYYMMhss')
         }
         users.push(user);
         UpdateUsername();

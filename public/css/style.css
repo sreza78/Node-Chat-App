@@ -205,6 +205,7 @@ body {
 .ui .messages li.friend-with-a-SVAGina .message {
     background-color: #62bf6e;
     float: left;
+    border-radius: 20px 20px 20px 0px;
 }
 
 .ui .messages li.friend-with-a-SVAGina .message:before {
@@ -232,6 +233,7 @@ body {
 .ui .messages li.i .message {
     background-color: #7bc4ef;
     float: right;
+    border-radius: 20px 20px 0px 20px;
 }
 
 .ui .messages li.i .message:before {
@@ -294,7 +296,7 @@ body {
     padding: 15px;
 }
 
-.chat-item{
+.chat-item {
     height: 40px;
     width: 40px;
     border-radius: 100px;
@@ -315,15 +317,18 @@ body {
 .chat-item1 {
     margin: -5px 0px 0px 30px;
 }
+
 .chat-item2 {
     margin: -5px 0px 0px 10px;
 }
+
 .chat-item3 {
     margin: -5px 0px 0px 10px;
     cursor: pointer;
 }
 
-.chat-item1 input[type='file'], .chat-item2 input[type='file'] {
+.chat-item1 input[type='file'],
+.chat-item2 input[type='file'] {
     height: 40px;
     width: 40px;
     position: absolute;
@@ -333,24 +338,26 @@ body {
     cursor: pointer;
 }
 
-.chat-item1:hover, .chat-item2:hover {
-    background-position: 0 -100%;
+.chat-item1:hover,
+.chat-item2:hover {
     color: #2590EB;
+    background-position: 0 -100%;
 }
 
 .player {
-  width: 450px;
-  height: 257px;
+    width: 450px;
+    height: 257px;
 }
+
 .player video {
-  background: black;
-  width: 450px;
-  height: 257px;
-  z-index: 1;
-  position: absolute;
-  overflow: hidden;
-  border-radius: 20px;
-  border: 10px solid #000;
-  box-shadow: 0 0 10px #000;
-  outline: none;
+    background: black;
+    width: 450px;
+    height: 257px;
+    z-index: 1;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 10px solid #000;
+    box-shadow: 0 0 10px #000;
+    outline: none;
 }
