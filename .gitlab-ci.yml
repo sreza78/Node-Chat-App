@@ -18,4 +18,4 @@ install_dependencies:
 
 start_server:
     stage: start
-    script: nodemon start
+    script: npm start
