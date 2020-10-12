@@ -296,6 +296,10 @@ body {
     padding: 15px;
 }
 
+.chat h4 {
+    padding: 15px;
+}
+
 .chat-item {
     height: 40px;
     width: 40px;
@@ -316,10 +320,12 @@ body {
 
 .chat-item1 {
     margin: -5px 0px 0px 30px;
+    cursor: pointer;
 }
 
 .chat-item2 {
     margin: -5px 0px 0px 10px;
+    cursor: pointer;
 }
 
 .chat-item3 {
@@ -327,8 +333,14 @@ body {
     cursor: pointer;
 }
 
+.chat-item4 {
+    margin: -5px 0px 0px 10px;
+    cursor: pointer;
+}
+
 .chat-item1 input[type='file'],
-.chat-item2 input[type='file'] {
+.chat-item2 input[type='file'],
+.chat-item3 input[type='file'] {
     height: 40px;
     width: 40px;
     position: absolute;
@@ -339,7 +351,8 @@ body {
 }
 
 .chat-item1:hover,
-.chat-item2:hover {
+.chat-item2:hover,
+.chat-item3:hover {
     color: #2590EB;
     background-position: 0 -100%;
 }

@@ -15,15 +15,19 @@ $(document).ready(function() {
     var sendmsg = $(".send");
     var image = $("#image");
     var video = $("#video");
-    var time = $("#time")
+    var file = $("#file");
+    var time = $("#time");
 
     userForm.submit(function(e) {
         e.preventDefault();
         socket.emit("new user", username.val(), function(data) {
             if (data) {
                 userFormArea.hide();
-                messageArea.fadeIn(500)
+                messageArea.fadeIn(500);
+                text.focus();
             }
+            else
+                alert("This username is exists\nTry another one...");
         });
         me = username.val();
         username.val("")
@@ -45,6 +49,8 @@ $(document).ready(function() {
 
     sendmsg.click(function(e) {
         e.preventDefault();
+        if(text.val() == "\n")
+            text.val("");
         if (text.val() != "")
             socket.emit("send message", text.val());
         text.val("")
@@ -64,13 +70,16 @@ $(document).ready(function() {
         messageForm.animate({ scrollTop: messageForm.prop("scrollHeight") }, 500);
     })
 
-    /*message.keydown(function(e) {
-        if (e.keyCode == 13) {
-            socket.emit("send message", message.val());
+    text.keydown(function(e) {
+        if(e.keyCode == 13 && text.val() == "\n")
+            text.val("");
+        if (e.keyCode == 13 && text.val() != "") {
+            socket.emit("send message", text.val());
             e.preventDefault();
-            message.val("")
+            text.val("")
+            text.focus();
         }
-    })*/
+    })
 
     image.change(function(e) {
         e.preventDefault();
@@ -129,6 +138,36 @@ $(document).ready(function() {
                 messageForm.append('<li class="friend-with-a-SVAGina"><div class="message"><div class="head">'+
                     '<span class="name">'+data.user+'</span></div><div class="player"><video id="videoPlayer" src="'+vid.src+
                     '"controls></video></div><div class="time">'+data.time+'</div></div></li>')
+                notification.play();
+            }
+            messageForm.animate({ scrollTop: messageForm.prop("scrollHeight") }, 500);
+        }
+    });
+
+    file.change(function(e) {
+        e.preventDefault();
+        if (file.val().length) {
+            var fReader = new FileReader();
+            fReader.readAsDataURL(e.target.files[0]);
+            fReader.onloadend = function(event) {
+
+                socket.emit("send file", event.target.result);
+                file.val("");
+                notification.currentTime = 0;
+            }
+        }
+    })
+
+    socket.on("new file", function(data) {
+        if (data.file) {
+            if (data.user == me) {
+                messageForm.append('<li class="i"><div class="message"><div class="head">'+
+                    '<span class="name">'+data.user+'</span></div>New file<a class="form-control" href='+data.buffer+
+                    '>📦 Download ⬇</a><div class="time">'+data.time+'</div></div></li>')
+            } else {
+                messageForm.append('<li class="friend-with-a-SVAGina"><div class="message"><div class="head">'+
+                    '<span class="name">'+data.user+'</span></div>New file<a class="form-control" href='+data.buffer+
+                    '>📦 Download ⬇</a><div class="time">'+data.time+'</div></div></li>')
                 notification.play();
             }
             messageForm.animate({ scrollTop: messageForm.prop("scrollHeight") }, 500);

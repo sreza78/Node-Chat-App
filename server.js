@@ -37,7 +37,6 @@ io.sockets.on('connection', function(socket) {
     console.log("Connected: %s users connected", connections.length);
 
     socket.on('disconnect', function(data) {
-        //if(!socket.username) return;
         users.splice(users.indexOf(socket.username), 1);
         UpdateUsername();
         connections.splice(connections.indexOf(socket), 1);
@@ -56,16 +55,24 @@ io.sockets.on('connection', function(socket) {
         io.sockets.emit('new video', { video: true, buffer: data, user:socket.username , time: moment().format("hh:mm a")});
     })
 
-    socket.on("new user", function(data, callback) {
-        callback(true);
+    socket.on('send file', function(data) {
+        io.sockets.emit('new file', { file: true, buffer: data, user:socket.username , time: moment().format("hh:mm a")});
+    })
+
+    socket.on("new user", function(data, callback) {        
         socket.username = data;
         user ={
-            ip: socket.handshake.address.split(':')[3],
-            username: socket.username,
-            id: moment().format('DDmmYYYYMMhss')
+            ip: socket.handshake.address.split(':')[3] ? socket.handshake.address.split(':')[3] : "127.0.0.1",
+            username: socket.username
         }
-        users.push(user);
-        UpdateUsername();
+        if(!users.find(function(element) {
+          return element.username == user.username; 
+        })){
+        	users.push(user);
+        	UpdateUsername();
+            callback(true);
+    	}
+        callback(false);
     })
 
     function UpdateUsername() {
