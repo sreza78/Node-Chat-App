@@ -5,12 +5,17 @@ This is a public chatroom website that users logging in and share data together.
 > Write in nodejs, express and socket.
 
 
+
 ## Features
 
 ✅ Text
+
 ✅ Image
+
 ✅ Video
+
 ✅ File
+
 
 
 ## Installation

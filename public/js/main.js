@@ -17,6 +17,7 @@ $(document).ready(function() {
     var video = $("#video");
     var file = $("#file");
     var time = $("#time");
+    var logout = $("#logout")
 
     userForm.submit(function(e) {
         e.preventDefault();
@@ -31,6 +32,10 @@ $(document).ready(function() {
         });
         me = username.val();
         username.val("")
+    })
+
+    logout.click(() => {
+        location.reload();
     })
 
     socket.on('get users', function(data) {

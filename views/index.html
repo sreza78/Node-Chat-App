@@ -22,10 +22,9 @@
                 <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
                     <form class="login100-form" id="userForm">
                         <span class="login100-form-title p-b-49">
-                            Login
+                            Welcome
                         </span>
                         <div class="wrap-input100 m-b-23">
-                            <span class="label-input100">Username</span>
                             <input class="input100" type="text" name="username" id="username" placeholder="Enter your username" required>
                             <span class="focus-input100" data-symbol="&#xf206;"></span>
                         </div>
@@ -47,6 +46,17 @@
                 <menu class="list-friends" id="users"></menu>
             </div>
             <div class="chat">
+                <div class="row bg-success">
+                    <div class="col-10">
+                        <h4 class="text-light text-center">chatroom</h4>
+                    </div>
+                    <div class="col-1" id="volume">
+                        <i class="fa fa-volume-up"></i>
+                    </div>
+                    <div class="col-1" id="logout">
+                        <i class="fa fa-sign-out"></i>
+                    </div>
+                </div>
                 <ul class="messages"></ul>
                 <div class="write-form">
                     <textarea placeholder="Type your message" id="text" rows="2"></textarea>
@@ -63,9 +73,9 @@
                         <input type="file" accept="file/*" id="file" />
                         <i class="fa fa-file"></i>
                     </div>
-                    <div class="chat-item chat-item4" id="volume">
+                    <!-- <div class="chat-item chat-item4" id="volume">
                         <i class="fa fa-volume-up"></i>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

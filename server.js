@@ -24,13 +24,6 @@ app.get('/', function(req, res) {
     res.sendFile(__dirname + '/index.html');
 })
 
-app.get('/users', function(req, res) {
-    res.send(users);
-})
-app.get('/connections', function(req, res) {
-    res.send(connections);
-})
-
 
 io.sockets.on('connection', function(socket) {
     connections.push(socket);

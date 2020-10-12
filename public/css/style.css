@@ -154,7 +154,7 @@ body {
 }
 
 .ui .messages {
-    height: calc(100% - 50px - 110px);
+    height: calc(100% - 50px - 160px);
     list-style: none;
     border-bottom: 2px solid white;
 }
@@ -296,8 +296,16 @@ body {
     padding: 15px;
 }
 
-.chat h4 {
-    padding: 15px;
+.chat .row {
+    margin-left:  0px;
+    margin-right: 0px;
+    height: 8.3%;
+    padding-top: 14px;
+}
+
+#volume, #logout{
+    font-size: 25px;
+    cursor: pointer;
 }
 
 .chat-item {
@@ -329,11 +337,6 @@ body {
 }
 
 .chat-item3 {
-    margin: -5px 0px 0px 10px;
-    cursor: pointer;
-}
-
-.chat-item4 {
     margin: -5px 0px 0px 10px;
     cursor: pointer;
 }
