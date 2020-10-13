@@ -1,6 +1,6 @@
 # Nodejs Chat App
 
-This is a public chatroom website that users logging in and share data together.
+A public realtime chatroom website that users logging in and share data together.
 
 > Write in nodejs, express and socket.
 
@@ -22,7 +22,7 @@ This is a public chatroom website that users logging in and share data together.
 
 1. Download | Clone the project
 ```shell
-git clone git@github.com:sreza78/Node-Chat-App.git | git clone https://github.com/sreza78/Node-Chat-App.git
+git clone https://github.com/sreza78/Node-Chat-App.git
 ```
 
 2. Install packages
@@ -34,3 +34,5 @@ npm install
 ```shell
 npm start
 ```
+
+Now you can be online at localhost
